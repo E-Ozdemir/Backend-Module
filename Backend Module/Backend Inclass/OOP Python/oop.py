@@ -120,25 +120,42 @@
 # person1._Person__id1 = 3000
 # print(person1._Person__id1)
 
+
 #>>>>>>INHERITANCE AND POLYMORPHISM
+# class Person:
+#     company = 'Clarusway'
 
-
-class Person:
-    company = 'Clarusway'
-
-    def __init__(self,name,age):
-        self.name= name
-        self.age = age
+#     def __init__(self,name,age):
+#         self.name= name
+#         self.age = age
      
-    def __str__(self):
-        return f"Name:{self.name} Age:{self.age} Path:{self.path}"
+#     def __str__(self):
+#         return f"Name:{self.name} Age:{self.age} "
+
+# class Lang:
+#     def __init__(self,langs):
+#         self.langs= langs
 
 
-class Employee(Person):
-    def __init__(self,name,age,path):
-        self.name = name
-        self.age = age
-        self.path= path
+# class Employee(Person,Lang):
+#     def __init__(self,name,age,path):
+#         # self.name = name
+#         # self.age = age
+#         super().__init__(name,age,path)#kimden inherit edildiysen(türetildiysen) git onun initi ne göre islem yap
+#         Lang.__init__(self,['Python','JS'])
+#         self.path= path
 
-emp1 = Employee('Barry',44,'FS')
-print(emp1)
+# #Yukaridaki str yi yeniden düzenleyebilme de polymorphism oluyor.
+#     def __str__(self):
+#         return f"Name:{self.name} Age:{self.age} Path:{self.path}"
+    
+#     #Override
+#     def details(self):
+#         super().details()
+#         print(f"Path: {self.path}")
+#         print(f"Langs: {self.langs}")
+
+# emp1 = Employee('Barry',44,'FS')
+# # print(emp1)
+
+# print(Employee.mro())#soy agacini cikariyor
