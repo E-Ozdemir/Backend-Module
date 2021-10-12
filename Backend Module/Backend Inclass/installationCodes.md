@@ -12,3 +12,11 @@
 10- py manage.py createsuperuser #>>to login admin panel! Burda hata verebilir migrate hatasi verebilir , bu durumda # py manage.py migrate # komutunu calistir. Sonra tekrardan createsuperuser ...
 11- py manage.py makemigrations (Form ve database degisiklikleri)
 12- py manage.py migrate (Form ve database degisiklikleri)
+13- py manage.py shell
+
+# from fscohort.models import Student
+s1 = Student(first_name="Henry", last_name="Forester", number=123)
+s1.save()
+
+# hem olusturup hem kaydetmek icin >>>
+s5 = Student.objects.create(first_name="Adam", last_name="Flyer", number=789) 
