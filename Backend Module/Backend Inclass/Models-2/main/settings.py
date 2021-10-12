@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fscogort',
     'django_extensions',
+    'dj_relationships',
 ]
 
 MIDDLEWARE = [
