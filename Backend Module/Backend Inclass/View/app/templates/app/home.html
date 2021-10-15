@@ -1,9 +1,30 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'app/style.css' %}">
 
 <h1>Ben Geldimmm!</h1>
+<img src="{% static 'app/example.jpg' %}" alt="Kitten">
 
-<head>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
 
-<img src="{% static 'example.jpg' %}" alt="Kitten">
+{% comment %}
+
+<h1>Hi there</h1>
+<h2>{{title}}</h2>
+<h2>{{dict1.django | title}}</h2>
+<p>
+{% for number in my_list  %}
+    {{number}} <br>
+{% endfor %}
+</p>
+<a href="{% url 'buraya view.pydaki fonksiyon ismi yazilir.Mesela home' pet.id %}"></a>
+{% endcomment %}
+
+{% comment %}
+   Burasi
+   cok 
+   satirli
+   bir comment!
+{% endcomment %}
+
+    
+    
+    

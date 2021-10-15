@@ -14,7 +14,8 @@ from django.shortcuts import render
 
 def home(request):
     context = {
-        'first_name': 'Rafe',
-        'last_name': 'Stefano',
+        'title': 'clarusway',
+        'dict1': {'django': 'best framework'},
+        'my_list': [2,3,4]
     }
     return render(request, 'app/home.html',context)
