@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # myapps
-    'fscohort'
+    'fscohort',
+    #3th party apps
+    'psycopg2'
 ]
 
 MIDDLEWARE = [

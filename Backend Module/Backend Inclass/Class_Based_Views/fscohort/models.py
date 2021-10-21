@@ -25,4 +25,5 @@ class Student(models.Model):
 
     
     
-    
+    class Meta:
+        ordering = ['-id']
