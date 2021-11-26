@@ -8,7 +8,7 @@ from .models import Student
 def home(request):
     return render(request, "fscohort/home.html")
 
-
+#------------------
 def student_list(request):
     
     students = Student.objects.all()
@@ -19,15 +19,17 @@ def student_list(request):
     }
     
     return render(request, "fscohort/student_list.html", context)
-
+#---------------------------------
 def student_add(request):
     form = StudentForm()
     
+    #Formdan gelen veriyi kontrol edilmesi gerekir!
     if request.method == "POST":
-        form = StudentForm(request.POST, request.FILES)
+        form = StudentForm(request.POST)# request.POST > bize gelen datayi al ilgili yerlere koy!
+        # , request.FILES
         if form.is_valid():
             form.save()
-            return redirect("list")
+            # return redirect("list")
             
     
     context = {
@@ -36,6 +38,8 @@ def student_add(request):
     }
     
     return render(request, "fscohort/student_add.html", context)
+
+#------------------------
 
 # DETAIL, UPDATE VE DELETE YUKARIDAKI IKI FONKSIYONDAN FARKLI
 
