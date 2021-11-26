@@ -1,9 +1,8 @@
-from django import  forms
-from django.forms import fields
+from django.forms import ModelForm
 from .models import Student
 
-
-class StudentForm(forms.ModelForm):
+# Add islemi icin form olusturmak gerekir , bu yüzden form olusturduk.
+class StudentForm(ModelForm):
     class Meta:
         model = Student
         fields = "__all__"
