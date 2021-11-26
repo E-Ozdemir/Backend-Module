@@ -13,6 +13,7 @@ def student_list(request):
     
     students = Student.objects.all()
     
+    # >>>>> students verisini template göndermek icin bunu context icerisine koymak gerekir!!!!
     context = {
         "students":students
     }
@@ -35,6 +36,8 @@ def student_add(request):
     }
     
     return render(request, "fscohort/student_add.html", context)
+
+# DETAIL, UPDATE VE DELETE YUKARIDAKI IKI FONKSIYONDAN FARKLI
 
 def student_detail(request,id):
     student = Student.objects.get(id=id)
