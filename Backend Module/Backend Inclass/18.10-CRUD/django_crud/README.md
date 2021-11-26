@@ -74,5 +74,11 @@ $ python manage.py runserver
 
 ```bash
 # DERS NOTLARI
+Islem Basamaklari
+a-view b-template ve c-urls
+>>>>businesss logic ile view'i olusturcaz ardindan , template ile render edecegiz, urls ile yolunu gösterecegiz.
 
+---------------------------
+1-Öncelikle student_list'i olusturduk. Bu fonksiyonu olusturulan ögrencileri görmek icin yazdik. Ögrencileri student_list.html template'i sayesinde gördük. 
+2-Ögrenci ekleme icin bir form olusturmamiz gerekti ve form.py create edip icersinie StudentForm class'i olusturduk ve tüm fieldleri cagirdik.
 ```
