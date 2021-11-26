@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Sabit kisim -->
     <h1>
         <hr>
         <center>
@@ -16,7 +17,12 @@
         </center>
         <hr>
     </h1>
-    <a href="{% url 'home' %}">HOME</a> {% block content %} {% endblock content %}
+    <!-- <a href="{% url 'home' %}">HOME</a>  -->
+    <!-- ------------------ -->
+
+    {% block content %} 
+        <!-- import edilecek kisim  fscohort/home.html-->
+    {% endblock content %}
 </body>
 
 </html>
