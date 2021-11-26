@@ -9,21 +9,21 @@ class Student(models.Model):
     email = models.EmailField(max_length=154)
     phone = models.CharField(max_length=50)
     
-    GENDER =(
+    GENDER =[
+        # sol taraf db in kaydedecegikisim , sag taraf human readable yani bizim görecegimiz kisimdir.
         ("1", "Female"),
         ("2", "Male"),
         ("3", "Other"),
         ("4", "Prefer Not Say"),   
-    )
+    ]
     
-    gender = models.CharField(max_length=50, choices=GENDER)
-    number = models.CharField(max_length=50)
+    
+    gender = models.CharField(max_length=50, choices=GENDER, default= 4)
+    number = models.CharField(max_length=50, blank=True)
+    #media klasörünün icinde student klasörü icine upload et.student/ diye belirtmezsek hepsini main icerisine yükler.
     image = models.ImageField(upload_to="student/", default="avatar.png")
     
     def __str__(self):
-        return self.number + " " + self.first_name
-    
-    
-    
+        return self.number + " ~ " + self.first_name + ' ' +self.last_name
     
     
