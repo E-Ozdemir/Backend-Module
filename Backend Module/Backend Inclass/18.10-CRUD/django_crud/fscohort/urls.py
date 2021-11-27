@@ -7,8 +7,8 @@ urlpatterns = [
     path('student_add/', student_add, name="add"),
     
     
-    path('detail/<int:id>/', student_detail, name="detail"),
-    path('update/<int:id>/', student_update, name="update"),
+    path('detail/<int:pk>/', student_detail, name="detail"),
+    path('update/<int:pk>/', student_update, name="update"),
     path('delete/<int:id>/', student_delete, name="delete"),
 ]  
  
