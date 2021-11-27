@@ -6,7 +6,9 @@
 <ul>
     
     {% for student in students  %}
-        <li>{{student}}</li>
+    <!-- <a href="http://127.0.0.1:8000/detail/{{student.pk}}/"><li>{{student}}</li></a> -->
+    <a href="{% url 'detail' student.pk %}"><li>{{student}}</li></a>
+        
     {% endfor %}
         
 </ul>
