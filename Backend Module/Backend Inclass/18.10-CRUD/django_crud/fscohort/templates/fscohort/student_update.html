@@ -1,8 +1,10 @@
-{% extends 'fscohort/base.html' %} {% block content %}
+{% extends 'fscohort/base.html' %} 
 
-<h2>Student Update</h2>
+{% block content %}
 
-<form action="" method="POST" enctype="multipart/form-data">
+<h2>Student Update Page</h2>
+
+<form action="" method="POST">
     {% csrf_token %} {{form.as_p}}
 
     <input type="submit" value="Update">
