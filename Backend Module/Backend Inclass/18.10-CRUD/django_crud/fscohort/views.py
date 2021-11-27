@@ -1,5 +1,4 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 from .forms import StudentForm
 from .models import Student
 
@@ -26,7 +25,7 @@ def student_add(request):
     #Formdan gelen veriyi kontrol edilmesi gerekir!
     if request.method == "POST":
         form = StudentForm(request.POST)# request.POST > bize gelen datayi al ilgili yerlere koy!
-        # , request.FILES
+        # , request.FILES 
         if form.is_valid():
             form.save()
             # return redirect("list")
@@ -42,23 +41,27 @@ def student_add(request):
 #------------------------
 
 # DETAIL, UPDATE VE DELETE YUKARIDAKI IKI FONKSIYONDAN FARKLI
+#Fark; db de olan veriyi cagircaz,istek atcaz, istek atarken primary key ile istek atacagiz!
 
-def student_detail(request,id):
-    student = Student.objects.get(id=id)
+def student_detail(request,pk):
+    
+    student = Student.objects.get(id=pk) # id ye göre git ve ilgili veriyi get et, AL !
     context = {
         "student":student
     }
     
     return render(request, "fscohort/student_detail.html", context)
+
+#------------------------------------------
     
-def student_update(request, id):
+def student_update(request, pk):
     
-    student = Student.objects.get(id=id)
-    
-    form = StudentForm(instance=student)
+    # Creating a form to change an existing article.
+    student = Student.objects.get(id=pk) #Veriyi id ye göre cek!
+    form = StudentForm(instance=student) #yukarida cektigimiz veriyi instance'a esitliyoruz!BU sayede student verilerini form daki kutucuklara yerlestiriyor!
     
     if request.method == "POST":
-        form = StudentForm(request.POST, request.FILES, instance=student)
+        form = StudentForm(request.POST, instance=student)
         if form.is_valid():
             form.save()
             return redirect("list")
