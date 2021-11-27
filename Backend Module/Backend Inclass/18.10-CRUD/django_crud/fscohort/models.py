@@ -9,13 +9,13 @@ class Student(models.Model):
     email = models.EmailField(max_length=154)
     phone = models.CharField(max_length=50)
     
-    GENDER =[
+    GENDER ={
         # sol taraf db in kaydedecegikisim , sag taraf human readable yani bizim görecegimiz kisimdir.
         ("1", "Female"),
         ("2", "Male"),
         ("3", "Other"),
         ("4", "Prefer Not Say"),   
-    ]
+    }
     
     
     gender = models.CharField(max_length=50, choices=GENDER, default= 4)
