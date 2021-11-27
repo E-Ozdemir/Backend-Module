@@ -1,16 +1,16 @@
-{% extends 'fscohort/base.html' %} {% block content %}
+{% extends 'fscohort/base.html' %} 
+{% block content %}
 
 <h2>Student Detail</h2>
 
+<!-- For döngüsüne gerek yok , Cünkü eslesen id ye dair 1 queryset gelecek. -->
+
 <div>
-    <img src="{{student.image.url}}" alt="">
-</div>
-<div>
+    <img src="{{student.image.url}}" alt="Broken Image" style="width: 30px; height: 30px; border-radius: 50%;">
     {{student.first_name}}
-</div>
-<div>
     {{student.last_name}}
 </div>
+
 <div>
     {{student.email}}
 </div>
@@ -18,13 +18,13 @@
     {{student.phone}}
 </div>
 <div>
-    {{student.gender}}
+    Gender:{{student.gender}}
 </div>
 
 <div>
 
-    <a href="{% url 'update' student.id %}">Edit</a>
-    <a href="{% url 'delete' student.id %}">Delete</a>
+    <a href="{% url 'update' student.pk %}">Edit & Update</a>
+    <!-- <a href="{% url 'delete' student.pk %}">Delete</a> -->
 </div>
 
 {% endblock content %}
